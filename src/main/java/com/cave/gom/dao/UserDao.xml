@@ -4,7 +4,21 @@
 <mapper namespace="com.cave.gom.dao.UserDao">
     <select id="findById" resultType="User" >
         select
-        id, name, password
+        id, name, password, type
         from user where id = #{id}
     </select>
+
+    <insert id="insert" parameterType="User">
+        insert into user(
+        id,
+        name,
+        password,
+        type
+        ) values(
+        #{id},
+        #{name},
+        #{password},
+        #{type}
+        )
+    </insert>
 </mapper>

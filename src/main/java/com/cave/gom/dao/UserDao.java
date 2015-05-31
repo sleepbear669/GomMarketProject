@@ -11,4 +11,6 @@ import org.springframework.stereotype.Repository;
 @MapperScan("com.cave.gom.dao")
 public interface UserDao {
     User findById(String id);
+
+    void insert(User user);
 }

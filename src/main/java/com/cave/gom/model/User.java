@@ -9,6 +9,16 @@ public class User {
     private String password;
     private String type;
 
+    public User() {
+    }
+
+    public User(String id, String name, String password, String type) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.type = type;
+    }
+
     public String getId() {
         return id;
     }
