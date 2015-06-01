@@ -1,6 +1,7 @@
 package com.cave.gom;
 
 import com.cave.gom.dao.ProductDao;
+import com.cave.gom.model.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
@@ -23,8 +25,22 @@ public class productDaoTests {
     private ProductDao productDao;
 
     @Test
-    public void testProductGetList() throws Exception {
-        List productList = productDao.getProductList();
+    public void testGetProductList() throws Exception {
+        List productList = productDao.FindAll();
         assertNotNull("is null", productList);
+    }
+
+    @Test
+    public void testInsertProduct() throws Exception {
+        String product_name = "123";
+        String seller_id = "sleepbear";
+        String contents = "1";
+        String image = null;
+        int price = 1;
+        Product product = new Product(product_name, seller_id, contents, image, price);
+        int count = productDao.count();
+        productDao.insert(product);
+
+        assertThat(count + 1 , is(productDao.count()));
     }
 }

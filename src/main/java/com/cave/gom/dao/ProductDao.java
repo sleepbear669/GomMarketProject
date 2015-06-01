@@ -10,5 +10,9 @@ import java.util.List;
  */
 @Repository
 public interface ProductDao {
-    List<Product> getProductList();
+    List<Product> FindAll();
+
+    int count();
+
+    void insert(Product product);
 }

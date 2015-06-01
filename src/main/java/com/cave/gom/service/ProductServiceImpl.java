@@ -19,6 +19,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getProducts() {
-        return productDao.getProductList();
+        return productDao.FindAll();
     }
 }

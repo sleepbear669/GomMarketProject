@@ -7,14 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 /**
  * Created by sleepbear on 2015-06-01.
  */
 @Controller
-public class signUp {
+public class SignUpController {
 
     @Autowired
     UserService userService;
@@ -26,6 +23,6 @@ public class signUp {
             return "signUp";
         }
         userService.addUser(user);
-        return "redirect:/productsList.gom";
+        return "productList";
     }
 }

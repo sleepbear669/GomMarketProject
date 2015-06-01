@@ -11,6 +11,16 @@ public class Product {
     private String image;
     private int price;
 
+    public Product(String product_name, String seller_id, String contents, String image, int price) {
+        this.product_name = product_name;
+        this.seller_id = seller_id;
+        this.contents = contents;
+        this.image = image;
+        this.price = price;
+    }
+
+    public Product() {}
+
     public int getProduct_id() {
         return product_id;
     }
