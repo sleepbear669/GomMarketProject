@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cave.gom.dao.ProductDao">
+    <select id="getProductList" resultType="Product" >
+        select
+        product_id, product_name, seller_id, contents, image, price
+        from product
+    </select>
+
+    <!--<insert id="insert" parameterType="User">-->
+        <!--insert into user(-->
+        <!--id,-->
+        <!--name,-->
+        <!--password,-->
+        <!--type-->
+        <!--) values(-->
+        <!--#{id},-->
+        <!--#{name},-->
+        <!--#{password},-->
+        <!--#{type}-->
+        <!--)-->
+    <!--</insert>-->
+</mapper>
