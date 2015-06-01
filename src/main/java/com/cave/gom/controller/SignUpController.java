@@ -23,6 +23,6 @@ public class SignUpController {
             return "signUp";
         }
         userService.addUser(user);
-        return "productList";
+        return "redirect:/productList";
     }
 }
