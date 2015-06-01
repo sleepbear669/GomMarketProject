@@ -1,7 +1,6 @@
 package com.cave.gom.service;
 
 import com.cave.gom.dao.ProductDao;
-import com.cave.gom.dao.UserDao;
 import com.cave.gom.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getProducts() {
-        return productDao.FindAll();
+        return productDao.findAll();
     }
 
     @Override

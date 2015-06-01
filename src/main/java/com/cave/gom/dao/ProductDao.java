@@ -10,9 +10,13 @@ import java.util.List;
  */
 @Repository
 public interface ProductDao {
-    List<Product> FindAll();
+    List<Product> findAll();
 
     int count();
 
     void insert(Product product);
+
+    void delete(int product_id);
+
+    Product findById(int product_id);
 }

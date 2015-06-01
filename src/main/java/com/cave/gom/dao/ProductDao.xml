@@ -2,10 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cave.gom.dao.ProductDao">
-    <select id="FindAll" resultType="Product" >
-        select
+    <select id="findAll" resultType="Product" >
+        SELECT
         product_id, product_name, seller_id, contents, image, price
-        from product
+        FROM product
+    </select>
+
+    <select id="findById" resultType="Product" >
+        SELECT
+        product_id, product_name, seller_id, contents, image, price
+        FROM product
+        WHERE product_id = #{product_id}
     </select>
 
     <select id="count" resultType="int">
@@ -17,14 +24,23 @@
         product_name,
         seller_id,
         contents,
-        image,
+        <if test="image != null">
+            image,
+        </if>
         price
         ) values(
         #{product_name},
         #{seller_id},
         #{contents},
+        <if test="image != null">
         #{image},
+        </if>
         #{price}
         )
     </insert>
+
+    <delete id="delete" >
+        DELETE from product
+        WHERE product_id = #{product_id}
+    </delete>
 </mapper>

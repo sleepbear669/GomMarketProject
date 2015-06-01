@@ -12,6 +12,7 @@ import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -26,7 +27,7 @@ public class productDaoTests {
 
     @Test
     public void testGetProductList() throws Exception {
-        List productList = productDao.FindAll();
+        List productList = productDao.findAll();
         assertNotNull("is null", productList);
     }
 
@@ -42,5 +43,12 @@ public class productDaoTests {
         productDao.insert(product);
 
         assertThat(count + 1 , is(productDao.count()));
+    }
+
+    @Test
+    public void testDeleteFirstProduct() throws Exception {
+        Product firstProduct = productDao.findAll().get(0);
+        productDao.delete(firstProduct.getProduct_id());
+        assertNull(productDao.findById(firstProduct.getProduct_id()));
     }
 }
