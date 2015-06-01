@@ -8,24 +8,24 @@
 </head>
 <body>
 <div class="container">
-    <form action="" class="">
+    <form action="signUpAction" method="post">
         <div class="form-horizontal">
             <div class="form-group ">
                 <label for="inputId" class="col-xs-3 control-label">ID</label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" id="inputId" placeholder="아이디"/>
+                    <input type="text" class="form-control" id="inputId" name="id" placeholder="아이디"/>
                 </div>
             </div>
             <div class="form-group ">
                 <label for="inputPassword" class="col-xs-3 control-label">Password</label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="패스워드"/>
+                    <input type="password" class="form-control" id="inputPassword" name="password" placeholder="패스워드"/>
                 </div>
             </div>
             <div class="form-group ">
                 <label for="inputName" class="col-xs-3 control-label">이름</label>
                 <div class="col-xs-9">
-                    <input type="text" class="form-control" id="inputName" placeholder="이름"/>
+                    <input type="text" class="form-control" id="inputName" name="name" placeholder="이름"/>
                 </div>
             </div>
             <div class="form-group ">
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="form-group text-center">
-                <button class="btn btn-default">로그인</button>
+                <button class="btn btn-default">회워가입</button>
                 <button class="btn btn-default col-xs-offset-1">취소</button>
             </div>
         </div>

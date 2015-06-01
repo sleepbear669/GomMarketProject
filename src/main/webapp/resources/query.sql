@@ -12,3 +12,11 @@ create table user(
 	type varchar(10)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+create table product(
+	product_id int auto_increment primary key,
+	product_name varchar(20),
+	seller_id varchar(20) not null,
+	contents varchar(500),
+	image varchar(50) DEFAULT "sleepbear.jpg",
+	price int
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
