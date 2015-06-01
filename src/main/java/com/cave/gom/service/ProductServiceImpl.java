@@ -21,4 +21,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getProducts() {
         return productDao.FindAll();
     }
+
+    @Override
+    public void register(Product product) {
+        productDao.insert(product);
+    }
 }

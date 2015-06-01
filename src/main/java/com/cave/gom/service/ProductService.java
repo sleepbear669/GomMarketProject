@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface ProductService {
     List<Product> getProducts();
+
+    void register(Product product);
 }
