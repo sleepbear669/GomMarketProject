@@ -32,14 +32,22 @@ public class productServiceTests {
 
     @Test
     public void testProductRegister() throws Exception {
-        String product_name = "123";
-        String seller_id = "sleepbear";
-        String contents = "1";
+        String product_name = "slee";
+        String seller_id = "lee";
+        String contents = "1123";
         String image = null;
         int price = 1;
         Product product = new Product(product_name, seller_id, contents, image, price);
         int count = productService.getProducts().size();
         productService.register(product);
         assertThat(count+1 , is(productService.getProducts().size()));
+    }
+
+    @Test
+    public void testRemoveProduct() throws Exception {
+        List<Product> productList = productService.getProducts();
+        int count = productList.size();
+        productService.remove(productList.get(0).getProduct_id());
+        assertThat(count-1 , is(productService.getProducts().size()));
     }
 }

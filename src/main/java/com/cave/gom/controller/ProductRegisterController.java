@@ -19,7 +19,7 @@ public class ProductRegisterController {
     @RequestMapping(value = "/productRegisterAction", method = RequestMethod.POST)
     public String register(Product product) {
         productService.register(product);
-        return "productList";
+        return "redirect:/productList";
     }
 
 

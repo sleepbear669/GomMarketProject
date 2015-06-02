@@ -11,4 +11,6 @@ public interface ProductService {
     List<Product> getProducts();
 
     void register(Product product);
+
+    void remove(int product_id);
 }

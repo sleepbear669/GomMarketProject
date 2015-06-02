@@ -1,6 +1,7 @@
 package com.cave.gom.dao;
 
 import com.cave.gom.model.Product;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.List;
  * Created by sleepbear on 2015-06-01.
  */
 @Repository
+@MapperScan("com.cave.gom.dao.mapper")
 public interface ProductDao {
     List<Product> findAll();
 

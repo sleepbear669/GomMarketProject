@@ -25,4 +25,9 @@ public class ProductServiceImpl implements ProductService {
     public void register(Product product) {
         productDao.insert(product);
     }
+
+    @Override
+    public void remove(int product_id) {
+        productDao.delete(product_id);
+    }
 }
