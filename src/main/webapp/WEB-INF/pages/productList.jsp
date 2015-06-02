@@ -13,16 +13,16 @@
         <h1>곰의 쇼핑몰</h1>
 
     </div>
-    <c:if test="${user != null}">
+    <c:if test="${user == null}">
         <div class="row">
-            <button type="button" class="btn btn-default" ><a href="/signUp.gom">회원가입</a></button>
+            <a href="/signUp.gom" class="btn btn-default">회원가입</a>
             <button type="button" class="btn btn-default">로그인</button>
         </div>
     </c:if>
-    <c:if test="${user == null}">
+    <c:if test="${user != null}">
         <div class="row">
             <span>${product.seller_id}님 안녕하세요.</span>
-            <button type="button" class="btn btn-default"><a href="/productRegister.gom?seller=${user.id}">상품등록</a></button>
+            <a class="btn btn-default" href="/productRegister.gom?seller=${user.id}">상품등록</a>
             <button class="btn btn-default pull-right">로그아웃</button>
         </div>
     </c:if>
@@ -39,14 +39,16 @@
         <c:forEach items="${productList}" var="product">
             <tr>
                 <td><img src="/resources/image/${product.image}"  class="img-responsive" alt="이미지 엄슴"/></td>
-                <td>${product.product_name} </td>
+                <td><a href="productInfo?id=${product.product_id}">${product.product_name}</a>  </td>
                 <td>${product.price} </td>
                 <td>
                     <div>${product.seller_id}</div>
-                    <div class="btn-group" role="group">
-                        <button><a href="modify?id=${product.product_id}">수정</a></button>
-                        <button><a href="remove?id=${product.product_id}">삭제</a></button>
-                    </div>
+                    <c:if test="${user.type == 'seller'}">
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-default" href="modify?id=${product.product_id}">수정</a>
+                            <a class="btn btn-default" href="remove?id=${product.product_id}">삭제</a>
+                        </div>
+                    </c:if>
                 </td>
             </tr>
         </c:forEach>
