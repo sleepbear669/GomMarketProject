@@ -21,4 +21,6 @@ public interface ProductDao {
     void delete(int product_id);
 
     Product findById(int product_id);
+
+    void update(Product product);
 }

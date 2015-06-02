@@ -9,6 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
+import java.util.Random;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
@@ -50,5 +51,17 @@ public class productDaoTests {
         Product firstProduct = productDao.findAll().get(0);
         productDao.delete(firstProduct.getProduct_id());
         assertNull(productDao.findById(firstProduct.getProduct_id()));
+    }
+
+    @Test
+    public void testProductModify() throws Exception {
+        Product product = productDao.findAll().get(0);
+        String randomStr = String.valueOf(new Random().nextInt());
+        product.setProduct_name(randomStr);
+        productDao.update(product);
+
+        Product updateProduct = productDao.findById(product.getProduct_id());
+
+        assertThat(updateProduct.getProduct_name(), is(randomStr));
     }
 }

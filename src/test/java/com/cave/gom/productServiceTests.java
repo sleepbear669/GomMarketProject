@@ -2,6 +2,7 @@ package com.cave.gom;
 
 import com.cave.gom.model.Product;
 import com.cave.gom.service.ProductService;
+import org.hamcrest.core.Is;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
+import java.util.Random;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertNotNull;
@@ -48,6 +50,19 @@ public class productServiceTests {
         List<Product> productList = productService.getProducts();
         int count = productList.size();
         productService.remove(productList.get(0).getProduct_id());
-        assertThat(count-1 , is(productService.getProducts().size()));
+        assertThat(count - 1, is(productService.getProducts().size()));
+    }
+
+    @Test
+    public void testModifyProductInfo() throws Exception {
+        Product product = productService.getProducts().get(0);
+        String randomStr = String.valueOf(new Random().nextInt());
+        product.setProduct_name(randomStr);
+        productService.modify(product);
+
+        Product updateProduct = productService.getProducts().get(0);
+
+        assertThat(updateProduct.getProduct_name(), Is.is(randomStr));
+
     }
 }

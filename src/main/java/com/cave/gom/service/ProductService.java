@@ -13,4 +13,6 @@ public interface ProductService {
     void register(Product product);
 
     void remove(int product_id);
+
+    void modify(Product product);
 }

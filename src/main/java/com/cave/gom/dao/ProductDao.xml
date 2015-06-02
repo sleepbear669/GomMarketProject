@@ -38,6 +38,14 @@
         #{price}
         )
     </insert>
+    <update id="update" parameterType="Product">
+        UPDATE product set
+        product_name = #{product_name},
+        contents =   #{contents},
+        image = #{image},
+        price = #{price}
+        WHERE product_id = #{product_id}
+    </update>
 
     <delete id="delete" >
         DELETE from product

@@ -36,6 +36,7 @@
                     <textarea rows="5" cols="5" class="form-control" id="inputDescribe" name="contents" ></textarea>
                 </div>
             </div>
+            <input type="hidden"/>
             <div class="text-center">
                 <button type="submit" class="btn btn-default">등록</button>
                 <button type="button" class="btn btn-default"><a href="/productList">취소</a></button>

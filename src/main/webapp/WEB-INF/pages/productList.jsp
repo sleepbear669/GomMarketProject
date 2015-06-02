@@ -22,7 +22,7 @@
     <c:if test="${user == null}">
         <div class="row">
             <span>${product.seller_id}님 안녕하세요.</span>
-            <button type="button" class="btn btn-default"><a href="/productRegister.gom">상품등록</a></button>
+            <button type="button" class="btn btn-default"><a href="/productRegister.gom?seller=${user.id}">상품등록</a></button>
             <button class="btn btn-default pull-right">로그아웃</button>
         </div>
     </c:if>
