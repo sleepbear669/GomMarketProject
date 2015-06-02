@@ -15,4 +15,6 @@ public interface ProductService {
     void remove(int product_id);
 
     void modify(Product product);
+
+    Product getProductById(int id);
 }

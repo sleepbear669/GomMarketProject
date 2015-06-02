@@ -13,7 +13,7 @@
         <h1>곰의 쇼핑몰</h1>
 
     </div>
-    <c:if test="${user == null}">
+    <c:if test="${user != null}">
         <div class="row">
             <button type="button" class="btn btn-default" ><a href="/signUp.gom">회원가입</a></button>
             <button type="button" class="btn btn-default">로그인</button>

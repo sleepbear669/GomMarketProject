@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -17,28 +18,38 @@
                 <div class="col-xs-4">
                     <input type="file" class="form-control" id="inputImg" name="image" />
                 </div>
+                <c:if test="${product != null}">
+                    <img src="/resources/image/${product.image}"  class="img-responsive" alt="이미지 엄슴"/>
+                </c:if>
             </div>
             <div class="form-group ">
                 <label for="inputProduct" class="col-xs-2 control-label">상품명</label>
                 <div class="col-xs-4">
-                    <input type="text" class="form-control" id="inputProduct" name="product_name" />
+                    <input type="text" class="form-control" id="inputProduct" name="product_name" value="${product.product_name}"/>
                 </div>
             </div>
             <div class="form-group ">
                 <label for="inputPrice" class="col-xs-2 control-label">가격</label>
                 <div class="col-xs-4">
-                    <input type="text" class="form-control" id="inputPrice" name="price" />
+                    <input type="text" class="form-control" id="inputPrice" name="price" value="${product.price}" />
                 </div>
             </div>
             <div class="form-group ">
                 <label for="inputDescribe" class="col-xs-2 control-label">상품상세설명</label>
                 <div class="col-xs-9">
-                    <textarea rows="5" cols="5" class="form-control" id="inputDescribe" name="contents" ></textarea>
+                    <textarea rows="5" cols="5" class="form-control" id="inputDescribe" name="contents" >${product.contents}</textarea>
                 </div>
             </div>
-            <input type="hidden"/>
+            <input type="hidden" value="${user.id}"/>
             <div class="text-center">
-                <button type="submit" class="btn btn-default">등록</button>
+                <button type="submit" class="btn btn-default">
+                    <c:if test="${product == null}">
+                        등록
+                    </c:if>
+                    <c:if test="${product != null}">
+                        수정
+                    </c:if>
+                </button>
                 <button type="button" class="btn btn-default"><a href="/productList">취소</a></button>
             </div>
         </form>
