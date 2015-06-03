@@ -25,7 +25,7 @@
             <c:if test="${user.isSeller()}">
                 <a class="btn btn-default" href="/productRegister.gom?seller=${user.id}">상품등록</a>
             </c:if>
-            <button class="btn btn-default pull-right">로그아웃</button>
+            <a href="/logout" class="btn btn-default pull-right">로그아웃</a>
         </div>
     </c:if>
     <table class="table">
