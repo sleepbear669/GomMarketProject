@@ -21,8 +21,10 @@
     </c:if>
     <c:if test="${user != null}">
         <div class="row">
-            <span>${product.seller_id}님 안녕하세요.</span>
-            <a class="btn btn-default" href="/productRegister.gom?seller=${user.id}">상품등록</a>
+            <span>${user.id}님 안녕하세요.</span>
+            <c:if test="${user.type == 'seller'}">
+                <a class="btn btn-default" href="/productRegister.gom?seller=${user.id}">상품등록</a>
+            </c:if>
             <button class="btn btn-default pull-right">로그아웃</button>
         </div>
     </c:if>
@@ -43,7 +45,7 @@
                 <td>${product.price} </td>
                 <td>
                     <div>${product.seller_id}</div>
-                    <c:if test="${user.type == 'seller'}">
+                    <c:if test="${user.type == 'seller' && user.id == product.seller_id}">
                         <div class="btn-group" role="group">
                             <a class="btn btn-default" href="modify?id=${product.product_id}">수정</a>
                             <a class="btn btn-default" href="remove?id=${product.product_id}">삭제</a>

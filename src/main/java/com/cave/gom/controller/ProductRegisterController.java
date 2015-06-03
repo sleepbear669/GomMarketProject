@@ -22,5 +22,4 @@ public class ProductRegisterController {
         return "redirect:/productList";
     }
 
-
 }

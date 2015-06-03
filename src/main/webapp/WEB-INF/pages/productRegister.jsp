@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <p ><span id="name">제주대학교</span>님의 상품</p>
+            <p ><span id="name">${product.seller_id}</span>님의 상품</p>
         </div>
         <form action="productRegisterAction" class="form-horizontal" method="post">
             <div class="form-group ">
@@ -40,7 +40,7 @@
                     <textarea rows="5" cols="5" class="form-control" id="inputDescribe" name="contents" >${product.contents}</textarea>
                 </div>
             </div>
-            <input type="hidden" value="${user.id}"/>
+            <input type="hidden" name="seller_id" value="${user.id}"/>
             <div class="text-center">
                 <button type="submit" class="btn btn-default">
                     <c:if test="${product == null}">
