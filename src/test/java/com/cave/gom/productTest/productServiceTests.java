@@ -1,4 +1,4 @@
-package com.cave.gom;
+package com.cave.gom.productTest;
 
 import com.cave.gom.model.Product;
 import com.cave.gom.service.ProductService;

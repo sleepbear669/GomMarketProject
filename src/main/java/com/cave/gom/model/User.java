@@ -50,4 +50,12 @@ public class User {
     public void setType(String type) {
         this.type = type;
     }
+
+    public boolean isSeller() {
+        return type.equals("seller") ? true : false;
+    }
+
+    public boolean isBuyer() {
+        return type.equals("buyer") ? true : false;
+    }
 }

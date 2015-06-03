@@ -9,40 +9,43 @@
 <body>
 <div class="container">
     <div class="row">
-        <p ><span id="name">제주대학교</span>님의 상품</p>
+        <p ><span id="name">${product.seller_id}</span>님의 상품</p>
     </div>
-    <form action="" class="form-horizontal">
+    <form action="/productModifyAction" class="form-horizontal" method="post">
+        <input type="hidden" name="product_id" value="${product.product_id}">
         <div class="form-group ">
             <label for="inputImg" class="col-lg-2 control-label">상품이미지</label>
-            <div class="row col-xs-4">
-                <input type="file" class="form-control" id="inputImg" />
+            <div class="col-xs-4">
+                <input type="file" class="form-control" id="inputImg" name="image" />
             </div>
-            <img src="http://www.onlifezone.com/files/attach/images/5947198/782/023/010/2.jpg" class="col-xs-offset-1" alt="" style="width: 100px; height: 100px;"/>
+            <c:if test="${product != null}">
+                <img src="/resources/image/${product.image}"  class="img-responsive" alt="이미지 엄슴"/>
+            </c:if>
         </div>
         <div class="form-group ">
             <label for="inputProduct" class="col-xs-2 control-label">상품명</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control" id="inputProduct" value="곰곰곰" />
+                <input type="text" class="form-control" id="inputProduct" name="product_name" value="${product.product_name}"/>
             </div>
         </div>
         <div class="form-group ">
             <label for="inputPrice" class="col-xs-2 control-label">가격</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control" id="inputPrice" value="15000"/>
+                <input type="text" class="form-control" id="inputPrice" name="price" value="${product.price}" />
             </div>
         </div>
         <div class="form-group ">
             <label for="inputDescribe" class="col-xs-2 control-label">상품상세설명</label>
             <div class="col-xs-9">
-                <textarea rows="5" cols="5" class="form-control" id="inputDescribe" >
-                    상품A는 품질이 좋습니니다.
-                    상품A는 가격이 저렴합니다.
-                </textarea>
+                <textarea rows="5" cols="5" class="form-control" id="inputDescribe" name="contents" >${product.contents}</textarea>
             </div>
         </div>
+        <input type="hidden" name="seller_id" value="${user.id}"/>
         <div class="text-center">
-            <button class="btn btn-default">등록</button>
-            <button class="btn btn-default">취소</button>
+            <button type="submit" class="btn btn-default">
+                    수정
+            </button>
+            <button type="button" class="btn btn-default"><a href="/productList">취소</a></button>
         </div>
     </form>
 </div>

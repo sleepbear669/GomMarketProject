@@ -21,8 +21,17 @@ public class ProductModifyController {
     public ModelAndView productModify(int id) {
         ModelAndView modelAndView = new ModelAndView();
         Product product = productService.getProductById(id);
-        modelAndView.setViewName("productRegister");
+        modelAndView.setViewName("productModify");
         modelAndView.addObject(product);
         return modelAndView;
     }
+
+    @RequestMapping(value = "/productModifyAction", method = RequestMethod.POST)
+    public String productModifyAction(Product product) {
+        if(product.getImage() == null) product.setImage("sleepbear.jpg");
+        productService.modify(product);
+        return "redirect:/productList";
+    }
 }
+
+

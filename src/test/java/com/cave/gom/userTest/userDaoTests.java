@@ -1,4 +1,4 @@
-package com.cave.gom;
+package com.cave.gom.userTest;
 
 import com.cave.gom.dao.UserDao;
 import com.cave.gom.model.User;
