@@ -39,7 +39,7 @@
             </div>
             <div class="form-group text-center">
                 <button type="submit" class="btn btn-default">회워가입</button>
-                <button type="button" class="btn btn-default col-xs-offset-1"><a href="/productList">취소</a></button>
+                <a href="/productList" class="btn btn-default col-xs-offset-1">취소</a>
             </div>
         </div>
     </form>

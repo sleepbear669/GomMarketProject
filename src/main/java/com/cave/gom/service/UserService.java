@@ -10,4 +10,6 @@ public interface UserService {
     void addUser(User user);
 
     User getUser(String id);
+
+    boolean memberCheck(String id, String password);
 }

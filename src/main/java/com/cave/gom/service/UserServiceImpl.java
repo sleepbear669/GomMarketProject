@@ -24,4 +24,13 @@ public class UserServiceImpl implements UserService {
         User user = userDao.findById(id);
         return user;
     }
+
+    @Override
+    public boolean memberCheck(String id, String password) {
+        User user = userDao.findById(id);
+        if( user != null) {
+            return user.getPassword().equals(password);
+        }
+        return false;
+    }
 }

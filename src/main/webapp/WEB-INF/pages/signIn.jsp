@@ -8,25 +8,24 @@
 </head>
 <body>
 <div class="container" style="height: 200px;width: 400px ;margin-top: 100px">
-    <form class="form-horizontal" action="">
+    <form class="form-horizontal" action="/signInAction" method="post">
         <div class="form-group ">
             <label for="inputId" class="col-xs-3 control-label">ID</label>
             <div class="col-xs-9">
-                <input type="text" class="form-control" id="inputId" placeholder="아이디"/>
+                <input type="text" class="form-control" id="inputId" name="id" placeholder="아이디"/>
             </div>
         </div>
         <div class="form-group">
             <label for="inputPassword" class="col-xs-3 control-label">PASSWOARD</label>
             <div class="col-xs-9">
-                <input type="password" class="form-control" id="inputPassword" placeholder="패스워드"/>
+                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="패스워드"/>
             </div>
         </div>
-</div>
-<div class="form-group text-center">
-    <button class="btn btn-default">로그인</button>
-    <button class="btn btn-default col-xs-offset-1">취소</button>
-</div>
-</form>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-default">로그인</button>
+            <a href="/productList" class="btn btn-default col-xs-offset-1">취소</a>
+        </div>
+    </form>
 </div>
 </body>
 </html>

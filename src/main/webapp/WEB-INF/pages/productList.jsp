@@ -16,7 +16,7 @@
     <c:if test="${user == null}">
         <div class="row">
             <a href="/signUp.gom" class="btn btn-default">회원가입</a>
-            <button type="button" class="btn btn-default">로그인</button>
+            <a href="/signIn.gom" class="btn btn-default">로그인</a>
         </div>
     </c:if>
     <c:if test="${user != null}">

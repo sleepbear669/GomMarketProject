@@ -14,6 +14,15 @@
         <beans:property name="suffix" value=".jsp"/>
     </beans:bean>
     <beans:import resource="repository.xml" />
+
+    <interceptors>
+        <interceptor>
+            <mapping path="productModify" />
+            <mapping path="productRegister" />
+            <mapping path="productRemove" />
+            <beans:bean id="loginInterceptor" class="com.cave.gom.interceptor.LoginInterceptor" />
+        </interceptor>
+</interceptors>
     <resources mapping="/resources/**" location="/resources/" />
     <view-controller path="/**/*.gom"/>
 
