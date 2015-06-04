@@ -24,16 +24,6 @@ public class userDaoTests {
     private UserDao userDao;
 
     @Test
-    public void testFindUserById() throws Exception {
-        String id = "gom";
-        User user = userDao.findById(id);
-        assertThat(user.getId(), is("gom"));
-        assertThat(user.getName(), is("kim"));
-        assertThat(user.getPassword(), is("1234"));
-        assertThat(user.getType(), is("seller"));
-    }
-
-    @Test
     public void testInsertUser() throws Exception {
         String id = String.valueOf(new Random().nextInt());
         String name = "허윤호";
