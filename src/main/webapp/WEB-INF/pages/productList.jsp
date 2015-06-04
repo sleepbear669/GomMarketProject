@@ -45,7 +45,7 @@
                 <td>${product.price} </td>
                 <td>
                     <div>${product.seller_id}</div>
-                    <c:if test="${user.isSeller() && user.id == product.seller_id}">
+                    <c:if test="${user.id == product.seller_id}">
                         <div class="btn-group" role="group">
                             <a class="btn btn-default" href="modify?id=${product.product_id}">수정</a>
                             <a class="btn btn-default" href="remove?id=${product.product_id}">삭제</a>

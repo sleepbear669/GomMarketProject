@@ -13,7 +13,7 @@
         <div class="col-lg-5"><h1>${product.product_name}</h1></div>
         <a href="/productList" class="btn btn-default col-md-1 col-xs-offset-1">목록</a>
         <c:if test="${user.id == product.seller_id}">
-            <button class="btn btn-default col-md-1 col-xs-offset-1">수정</button>
+            <a href="/modify?id=${product.product_id}" class="btn btn-default col-md-1 col-xs-offset-1">수정</a>
         </c:if>
     </div>
     <div >

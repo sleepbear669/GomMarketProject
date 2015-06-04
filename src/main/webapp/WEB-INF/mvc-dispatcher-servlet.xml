@@ -17,7 +17,7 @@
 
     <interceptors>
         <interceptor>
-            <mapping path="productModify" />
+            <mapping path="productModifyAction" />
             <mapping path="productRegister" />
             <mapping path="productRemove" />
             <beans:bean id="loginInterceptor" class="com.cave.gom.interceptor.LoginInterceptor" />

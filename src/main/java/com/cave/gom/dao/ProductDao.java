@@ -10,7 +10,6 @@ import java.util.List;
  * Created by sleepbear on 2015-06-01.
  */
 @Repository
-@MapperScan("com.cave.gom.dao.mapper")
 public interface ProductDao {
     List<Product> findAll();
 

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
  * Created by sleepbear on 2015-05-31.
  */
 @Repository
-@MapperScan("com.cave.gom.dao.mapper")
 public interface UserDao {
     User findById(String id);
 

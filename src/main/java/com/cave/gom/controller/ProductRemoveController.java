@@ -22,7 +22,6 @@ public class ProductRemoveController {
 
     @RequestMapping(value = "/remove", method = RequestMethod.GET)
     public String removeProduct(int id) {
-        System.out.println(id);
         productService.remove(id);
         return "redirect:/productList";
     }

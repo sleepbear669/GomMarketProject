@@ -40,7 +40,7 @@
             <input type="hidden" name="seller_id" value="${user.id}"/>
             <div class="text-center">
                 <button type="submit" class="btn btn-default">등록</button>
-                <button type="button" class="btn btn-default"><a href="/productList">취소</a></button>
+               <a href="/productList" class="btn btn-default">취소</a>
             </div>
         </form>
     </div>

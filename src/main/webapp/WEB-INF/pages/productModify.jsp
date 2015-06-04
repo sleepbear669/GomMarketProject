@@ -42,10 +42,8 @@
         </div>
         <input type="hidden" name="seller_id" value="${user.id}"/>
         <div class="text-center">
-            <button type="submit" class="btn btn-default">
-                    수정
-            </button>
-            <button type="button" class="btn btn-default"><a href="/productList">취소</a></button>
+            <button type="submit" class="btn btn-default">수정</button>
+            <a href="/productList" class="btn btn-default">취소</a>
         </div>
     </form>
 </div>
