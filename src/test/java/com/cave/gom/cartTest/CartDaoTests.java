@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  * Created by sleepbear on 2015-06-04.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "file:zsrc/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml")
+@ContextConfiguration(locations = "file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml")
 public class CartDaoTests {
 
     @Autowired
