@@ -25,6 +25,6 @@ CREATE TABLE cart(
   cart_id int auto_increment PRIMARY KEY,
   product_id INT NOT NULL ,
   buyer_id VARCHAR (20) NOT NULL ,
-  foreign key (product_id) references product(product_id),
-  foreign key (buyer_id) references user(id)
+  foreign key (product_id) references product(product_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  foreign key (buyer_id) references user(id) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

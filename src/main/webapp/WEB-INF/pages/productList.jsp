@@ -35,6 +35,7 @@
             <th class="col-md-5">상품명</th>
             <th class="col-md-2">가격</th>
             <th class="col-md-2">판매자</th>
+            <th class="col-md-2"></th>
         </tr>
         </thead>
         <tbody>
@@ -52,6 +53,7 @@
                         </div>
                     </c:if>
                 </td>
+                <th><a href="/productCartList?buyer_id=${user.id}&id=${product.product_id}" class="btn btn-default">구매</a></th>
             </tr>
         </c:forEach>
         </tbody>

@@ -6,7 +6,7 @@
         SELECT
         product_id, buyer_id
         FROM cart
-        WHERE buyer_id = #{id}
+        WHERE buyer_id = #{buyerId}
     </select>
 
     <insert id="insert" parameterType="Cart">
@@ -21,6 +21,6 @@
 
     <delete id="deleteById" >
     DELETE from cart
-    WHERE buyer_id = #{buyer_id}
+    WHERE buyer_id = #{buyerId}
     </delete>
 </mapper>

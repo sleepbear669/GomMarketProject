@@ -12,8 +12,8 @@ public class Cart {
     public Cart() {
     }
 
-    public Cart(String buyerId, int product_id) {
-        this.buyerId = buyerId;
+    public Cart(String buyer_id, int product_id) {
+        this.buyerId = buyer_id;
         this.product_id = product_id;
     }
 
